@@ -3,4 +3,5 @@ RUN apk add sudo curl neovim neovim-doc tree-sitter-vimdoc ripgrep && addgroup -
 USER siuyin
 WORKDIR /home/siuyin
 RUN curl -LsSf https://astral.sh/uv/install.sh | sh && . .profile && uv tool install ruff@latest && uv tool install ty@latest
-ENTRYPOINT ["sh"]
+COPY --chown=siuyin:siuyin .config/nvim/init.lua .config/nvim/init.lua
+ENTRYPOINT ["sh","--login"]

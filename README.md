@@ -1,5 +1,8 @@
 # nvim editor on Alpine
 
+Sets up `uv`, `ruff`linter/formatter and `ty` type checker.
+
+
 ## Build
 ```
 docker build . -t <YOUR_IMAGE_TAG: eg siuyin/edt:latest>
