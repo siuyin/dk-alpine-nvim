@@ -1,9 +1,19 @@
+vim.opt.hlsearch = false
+
 vim.lsp.config('ruff', { 
         cmd = {"ruff","server"},
-        filetypes = { "python"},
+        filetypes = {"python"},
+})
+
+vim.lsp.config('ty', { 
+        cmd = {"ty","server"},
+        filetypes = {"python"},
 })
 
 vim.lsp.enable('ruff')
+vim.lsp.enable('ty')
+
+vim.keymap.set("n","<leader>e", vim.diagnostic.open_float, {bufnr = bufnr})
 
 -- Define an autocommand group to prevent duplicate autocmds
 vim.api.nvim_create_augroup("LspFormatting", { clear = true })
