@@ -1,4 +1,6 @@
 vim.opt.hlsearch = false
+vim.opt.grepprg = "rg --vimgrep"
+vim.opt.grepformat = "%f:%l:%c:%m"
 
 vim.lsp.config('ruff', { 
         cmd = {"ruff","server"},
